@@ -9,7 +9,7 @@ datasource db {
 
 model movies {
   Title  String
-  Year   Int
+  Year   String
   imdbID String @id
   Type   String
   Poster String

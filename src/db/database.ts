@@ -1,7 +1,12 @@
-import {PrismaClient } from "@prisma/client";
+import {PrismaClient, movies } from "@prisma/client";
+export const data = require("../../movies.json");
+export const prisma:PrismaClient = new PrismaClient();
+export type Film = movies;
 
-const prisma:PrismaClient = new PrismaClient();
 
-module.exports = {
-    prisma
-};
+async function name() {
+    const temp = await prisma.movies.findMany();
+    console.log(temp);
+}
+
+//name();
