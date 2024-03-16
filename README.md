@@ -1,1 +1,3 @@
-Tugas 4 ARC, untuk membuat database tentang bioskop
+# TUGAS 4 ARC
+
+pada tugas ini diperintahkan untuk membuat database film yang diputar di bioskop
