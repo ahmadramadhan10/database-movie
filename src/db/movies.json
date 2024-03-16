@@ -54,19 +54,5 @@
     "imdbID": "tt0347791",
     "Type": "movie",
     "Poster": "https://m.media-amazon.com/images/M/MV5BODg3OTljOTktNmI3Ny00MDczLTk2NGItNWRiOTE2YjQ1OWI0XkEyXkFqcGdeQXVyMzM4MjM0Nzg@._V1_SX300.jpg"
-  },
-  {
-    "Title": "Pokémon: Mewtwo Strikes Back - Evolution",
-    "Year": "2019",
-    "imdbID": "tt8856470",
-    "Type": "movie",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BYTlmMjc0YzgtMDlmYy00NGY4LTgyOTAtODI2MzllNWI1ODBkXkEyXkFqcGdeQXVyMTMxNDQyNjM5._V1_SX300.jpg"
-  },
-  {
-    "Title": "Pokémon: Lucario and the Mystery of Mew",
-    "Year": "2005",
-    "imdbID": "tt0875609",
-    "Type": "movie",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BMTUxOTcwNjAwMl5BMl5BanBnXkFtZTgwMjc2MzQ2NjE@._V1_SX300.jpg"
   }
 ]

@@ -24,3 +24,11 @@ app.listen(PORT, () => {
     prepare();
     console.log(`[Server] : App running at PORT : ${PORT}`);
 });
+
+process.on("SIGTERM", () => {
+    overWrite();
+});
+
+process.on("SIGINT", () => {
+    overWrite();
+});

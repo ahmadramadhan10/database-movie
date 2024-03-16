@@ -13,8 +13,12 @@ export async function loadData() : Promise<void> {
 }
 
 export async function overWrite() : Promise<void> {
-    const movies : Film[] | null = await findMovies("",""); // buat handle query params
-    // masih ada bug jadi tidak bisa melakukan overwrite terhadap file JSON
+    const movies : Film[] | null = await prisma.movies.findMany(); // buat handle query params
+    const path = "./movies.json";
+    //console.log(movies); 
+    fs.writeFile(path, JSON.stringify(movies, null, 2), err => {
+        if(err) throw "Error";
+    });
 }
 
 export async function findMovies(imdbID : string, Title : string) : Promise<Film[] | null>{
