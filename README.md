@@ -1,1 +1,3 @@
-Tugas 4 ARC, untuk membuat database tentang bioskop
+# TUGAS 4 ARC
+
+di tugas ini saya menggunakan layered CRUD arhcitecture untuk implementasi backend
