@@ -1,6 +1,6 @@
 import { findMovieById, findMovieByTitle, findMovies } from "./app-repository";
 import { insertMovie, deleteMovie, editMovie } from "./app-repository";
-import { Film, prisma } from "./db/database";
+import { Film, prisma } from "../db/database";
 
 export const getAllMovie = async(id : string, title : string) : Promise<Film[] | null> => {
     const movies = await findMovies(id, title);

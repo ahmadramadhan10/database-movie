@@ -1,5 +1,5 @@
 import express from "express"
-import { Film, data }from "./db/database";
+import { Film, data }from "../db/database";
 import { getAllMovie, getMovieById, getMovieByTitle,  createMovie, deleteMovieById, editMovieById} from "./app-service";
 
 export const router = express.Router();

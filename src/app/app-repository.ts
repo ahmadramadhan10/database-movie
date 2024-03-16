@@ -1,7 +1,7 @@
 // Handle pergerakan data baik itu insert, edit, maupun searching
 import { error } from "console";
 import { getMovieById } from "./app-service";
-import { prisma, Film } from "./db/database";
+import { prisma, Film } from "../db/database";
 
 export async function findMovies(imdbID : string, Title : string) : Promise<Film[] | null>{
     const movies = await prisma.movies.findMany({
