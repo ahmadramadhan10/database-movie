@@ -1,7 +1,21 @@
-// Handle pergerakan data baik itu insert, edit, maupun searching
-import { error } from "console";
-import { getMovieById } from "./app-service";
-import { prisma, Film } from "../db/database";
+// Layered yang berhubungan langsung dengan Database
+import { prisma, Film, data } from "../db/database";
+import fs from "fs"
+
+export async function loadData() : Promise<void> {
+    await prisma.movies.deleteMany(); // Hapus database sebelum dimasukin yang baru
+    for(let i = 0; i < data.length; ++i) {
+        const movie : Film | null = await findMovieById(data[i].imdbID);
+        if(!movie) {
+            await insertMovie(data[i]);
+        }
+    }
+}
+
+export async function overWrite() : Promise<void> {
+    const movies : Film[] | null = await findMovies("",""); // buat handle query params
+    // masih ada bug jadi tidak bisa melakukan overwrite terhadap file JSON
+}
 
 export async function findMovies(imdbID : string, Title : string) : Promise<Film[] | null>{
     const movies = await prisma.movies.findMany({

@@ -9,7 +9,7 @@ router.get("/", async(req, res) => {
     try {
         const id : string | null = req.query.id as string;
         const title: string | null = req.query.title as string;
-        if(id && title || (!id && !title)) {
+        if((id && title) || (!id && !title)) {
             const movies = await getAllMovie(id, title);
             if(!movies) throw "Not Found";
             res.status(200).send(movies);
