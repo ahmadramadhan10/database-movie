@@ -3,8 +3,13 @@ import { error } from "console";
 import { getMovieById } from "./app-service";
 import { prisma, Film } from "./db/database";
 
-export async function findMovies() : Promise<Film[] | null>{
-    const movies = await prisma.movies.findMany();
+export async function findMovies(imdbID : string, Title : string) : Promise<Film[] | null>{
+    const movies = await prisma.movies.findMany({
+        where : {
+            imdbID,
+            Title,
+        },
+    });
     return movies;
 }
 
@@ -18,8 +23,8 @@ export async function findMovieById(imdbID : string) : Promise<Film | null>{
     return movie;
 }
 
-export async function findMovieByTitle(Title : string) : Promise<Film[] | null> {
-    const movies : Film[] | null = await prisma.movies.findMany({
+export async function findMovieByTitle(Title : string) : Promise<Film | null> {
+    const movies : Film | null = await prisma.movies.findFirst({
         where : {
             Title,
         },
